@@ -12,22 +12,6 @@ c:\users\pedro.rezende\documents\visual studio 2013\Projects\SisRename\SisRename
 c:\users\pedro.rezende\documents\visual studio 2013\Projects\SisRename\SisRename\bin\Debug\Microsoft.SqlServer.Smo.dll
 c:\users\pedro.rezende\documents\visual studio 2013\Projects\SisRename\SisRename\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
 c:\users\pedro.rezende\documents\visual studio 2013\Projects\SisRename\SisRename\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\bin\Debug\SisRename.exe.config
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\obj\Debug\SisRename.exe
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\obj\Debug\SisRename.pdb
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\bin\Debug\SisRename.exe
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\bin\Debug\SisRename.pdb
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\bin\Debug\Microsoft.SqlServer.Smo.dll
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\bin\Debug\Microsoft.SqlServer.Dmf.dll
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\bin\Debug\pt\Microsoft.SqlServer.Dmf.resources.dll
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\bin\Debug\pt\Microsoft.SqlServer.RegSvrEnum.resources.dll
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\obj\Debug\SisRename.csprojResolveAssemblyReference.cache
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\obj\Debug\SisRename.Form1.resources
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\obj\Debug\SisRename.Properties.Resources.resources
-C:\Users\renan.xavier\Source\Repos\sysrename\SisRename\obj\Debug\SisRename.csproj.GenerateResource.Cache
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\bin\Debug\SisRename.exe.config
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\obj\Debug\SisRename.exe
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\obj\Debug\SisRename.pdb

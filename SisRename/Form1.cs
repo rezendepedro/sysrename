@@ -32,7 +32,9 @@ namespace SisRename
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-            
+            string path = txtSelecionar.Text;
+
+
 
           
         
@@ -82,16 +84,7 @@ namespace SisRename
                     else
                     {
                         rtxtLog.Text = "\n\n Erro ao selecionar Banco de dados:" + lista[1];
-                    }
-
-
-                    //// For remote connection, remote server name / ServerInstance needs to be specified
-                    //ServerConnection srvConn2 = new ServerConnection(remoteSvrName);
-                    //srvConn2.LoginSecure = false;
-                    //srvConn2.Login = sqlServerLogin;
-                    //srvConn2.Password = password;
-                    //Server srv3 = new Server(srvConn2);
-                    //rtxtLog.Text+="\n"+srv3.Information.Version.ToString();   // connection is established
+                    }                   
 
                 }
                 else
@@ -130,15 +123,44 @@ namespace SisRename
            
         }
 
-        private void btnSelecionar_Click(object sender, EventArgs e)
+        private void cmbCol1_DropDown(object sender, System.EventArgs e)
         {
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            fbd.Description = "Selecione a pasta para salvar as imagens:";
-            if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            List<string> lista;
+            if (cmbTabela.SelectedIndex != -1)
             {
-                txtSelecionar.Text = fbd.SelectedPath;
+                conexao = new Classes.conexao(srvConn.ConnectionString);
+                lista = conexao.GetDatabaseList("use " + cmbBanco.Text + "; SELECT NAME FROM SYSCOLUMNS WHERE ID = OBJECT_ID('"+cmbTabela.Text+"')");
+                if (lista[0] != "ERRO")
+                {
+                    cmbCol1.DataSource = lista;
+                }
+                else
+                {
+                    rtxtLog.Text += "\n\n Erro ao selecionar tabela:" + lista[1];
+                }
+
             }
-                
+
         }
+
+        private void cmbCol2_DropDown(object sender, System.EventArgs e)
+        {
+            List<string> lista;
+            if (cmbTabela.SelectedIndex != -1)
+            {
+                conexao = new Classes.conexao(srvConn.ConnectionString);
+                lista = conexao.GetDatabaseList("use " + cmbBanco.Text + "; SELECT NAME FROM SYSCOLUMNS WHERE ID = OBJECT_ID('" + cmbTabela.Text + "')");
+                if (lista[0] != "ERRO")
+                {
+                    cmbCol2.DataSource = lista;
+                }
+                else
+                {
+                    rtxtLog.Text += "\n\n Erro ao selecionar tabela:" + lista[1];
+                }
+
+            }
+        }
+        
     }
 }

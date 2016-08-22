@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.txtSelecionar = new System.Windows.Forms.TextBox();
             this.lblInstacia = new System.Windows.Forms.Label();
@@ -73,7 +74,6 @@
             this.txtSelecionar.Size = new System.Drawing.Size(292, 26);
             this.txtSelecionar.TabIndex = 1;
             this.txtSelecionar.TabStop = false;
-            this.txtSelecionar.Text = "C:\\Users\\pedro.rezende\\Documents\\File\\IMG";
             // 
             // lblInstacia
             // 
@@ -253,7 +253,7 @@
             this.rtxtLog.Size = new System.Drawing.Size(425, 96);
             this.rtxtLog.TabIndex = 19;
             this.rtxtLog.TabStop = false;
-            this.rtxtLog.Text = "";
+            this.rtxtLog.Text = resources.GetString("rtxtLog.Text");
             // 
             // lblLog
             // 

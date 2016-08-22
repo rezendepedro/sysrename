@@ -15,3 +15,14 @@ c:\users\pedro.rezende\documents\visual studio 2013\Projects\SisRename\SisRename
 C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\bin\Debug\SisRename.exe.config
 C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\obj\Debug\SisRename.exe
 C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\obj\Debug\SisRename.pdb
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\bin\Debug\SisRename.exe
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\bin\Debug\SisRename.pdb
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\bin\Debug\Microsoft.SqlServer.Smo.dll
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\obj\Debug\SisRename.csprojResolveAssemblyReference.cache
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\obj\Debug\SisRename.Form1.resources
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\obj\Debug\SisRename.Properties.Resources.resources
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\obj\Debug\SisRename.csproj.GenerateResource.Cache

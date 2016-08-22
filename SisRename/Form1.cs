@@ -32,8 +32,16 @@ namespace SisRename
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
             string path = txtSelecionar.Text;
+            if (cmbBanco.SelectedIndex != -1 && cmbCol1.SelectedIndex!=-1 && cmbCol2.SelectedIndex!=-1 && cmbTabela.SelectedIndex!=-1)
+            {
+               dt= conexao.SELECT("use "+cmbBanco.Text+"; SELECT "+cmbCol1.Text+", "+cmbCol2.Text+" FROM "+cmbTabela.Text+" order by "+cmbCol2.Text);
+               validar.renomeiaArquivos(path, dt, cmbCol1.Text,cmbCol2.Text);
 
+
+            }
+            
 
 
           

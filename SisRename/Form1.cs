@@ -161,6 +161,18 @@ namespace SisRename
 
             }
         }
+
+        private void btnSelecionar_Click(object sender, System.EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.Description = "Selecione a pasta para salvar as imagens:";
+            if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                txtSelecionar.Text = fbd.SelectedPath;
+                //Loucura
+            }
+
+        }
         
     }
 }

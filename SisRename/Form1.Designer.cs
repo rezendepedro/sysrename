@@ -178,11 +178,11 @@
             // 
             this.lblCol1.AutoSize = true;
             this.lblCol1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCol1.Location = new System.Drawing.Point(234, 386);
+            this.lblCol1.Location = new System.Drawing.Point(181, 386);
             this.lblCol1.Name = "lblCol1";
-            this.lblCol1.Size = new System.Drawing.Size(70, 18);
+            this.lblCol1.Size = new System.Drawing.Size(126, 18);
             this.lblCol1.TabIndex = 13;
-            this.lblCol1.Text = "Coluna1:";
+            this.lblCol1.Text = "Coluna de poste:";
             // 
             // cmbCol1
             // 
@@ -198,11 +198,11 @@
             // 
             this.lblCol2.AutoSize = true;
             this.lblCol2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCol2.Location = new System.Drawing.Point(234, 428);
+            this.lblCol2.Location = new System.Drawing.Point(181, 428);
             this.lblCol2.Name = "lblCol2";
-            this.lblCol2.Size = new System.Drawing.Size(70, 18);
+            this.lblCol2.Size = new System.Drawing.Size(113, 18);
             this.lblCol2.TabIndex = 15;
-            this.lblCol2.Text = "Coluna2:";
+            this.lblCol2.Text = "Coluna de foto:";
             // 
             // cmbCol2
             // 

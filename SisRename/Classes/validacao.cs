@@ -36,53 +36,79 @@ namespace SisRename.Classes
 
             return result;
         }
-       public int renomeiaArquivos(string caminho,DataTable dt,string coluna1,string coluna2)
+       public int renomeiaArquivos(string caminhoentrada,string caminhosaida,DataTable dt,string coluna1,string coluna2,string coluna3,string caracterespecial)
        {
            try {
                     // Caminho literal da pasta informada 
-                    DirectoryInfo dirInfo = new DirectoryInfo(@caminho);
-
+                    DirectoryInfo dirInfo = new DirectoryInfo(@caminhoentrada);
+                    //FileSystemInfo[] files = dirInfo.GetFileSystemInfos();                    
                     // Pega todas as informações dos arquivos dentro do diretório informado 
-                     FileInfo[] arquivos = dirInfo.GetFiles();
+                    FileInfo[] arquivos =  dirInfo.GetFiles().OrderBy(p => p.Name).ToArray();
                       
                        string antigoNome;
                        string novoNome;
-                       int arqAfet = 0;
-                       string codigoposte="";
-                       int result = -1;
-                        string nomeabrev="";
+                       string nomebdinicio = "";
+                       string nomebdfinal = "";                       
+                       int arqAfet = 0;                      
+                       string nomecompincio="";
+                       string nomecompfinal = "";
+                       int cont=0;
 
-                       for (int i = 0; i < arquivos.Length; i++)
+                       if (dt.Rows.Count > 0)
                        {
-                           
-                           if(dt.Rows.Count>0)
-                           { 
-                               // caminho\nome do arquivo 
-                               antigoNome = @caminho + "\\" + arquivos[i].Name;
-
-                               nomeabrev = arquivos[i].ToString().Split('.')[0];//remove extesão do arquivo
-                               if (IsNumeric(nomeabrev))//verifica se é numero
+                           for(int i=0;i<dt.Rows.Count;i++)
+                           {
+                               if ((i + 1) > dt.Rows.Count)
                                {
-                                   result = BuscaBinaria(dt, Convert.ToInt32(nomeabrev), coluna2);//consulta datatable se possui o arquivo registrado
-
-                                   if (result != -1)
-                                   {
-                                       codigoposte = dt.Rows[result][coluna1].ToString();
-                                       arqAfet++;//incrementa para cada arquivo afetado
-                                       novoNome = @caminho + "\\" + codigoposte + "_" + arquivos[i].Name;
-                                       File.Move(antigoNome, novoNome); // Move o arquivo para a mesma pasta com os carateres substituídos
-                                   }
+                                   break;
                                }
                                else
                                {
+                                   nomebdinicio=dt.Rows[i][coluna2].ToString();
+                                   nomebdfinal = dt.Rows[i][coluna3].ToString();
+                                   nomecompincio = "IMG_" + nomebdinicio+".JPG";
+                                   nomecompfinal = "IMG_" + nomebdfinal + ".JPG";
+
+                                   for (int j = 0; j < arquivos.Length;j++ )
+                                   {
+                                       if(arquivos[j].ToString()==nomecompincio)
+                                       {
+                                           cont = 0;                                           
+                                           
+                                               for (int x = j; x < arquivos.Length; x++)
+                                               {
+                                                   cont++;
+                                                   antigoNome = @caminhoentrada + "\\" + arquivos[x].ToString();
+                                                   novoNome = @caminhosaida + "\\" + dt.Rows[i][coluna1].ToString() + caracterespecial + cont+".JPG";
+                                                   File.Copy(antigoNome, novoNome); // Move o arquivo para a mesma pasta com os carateres substituídos
+                                                   arqAfet++;
+                                                   if (arquivos[x].ToString() == nomecompfinal)
+                                                   {
+                                                       cont = -1;
+                                                       break;
+                                                   }
+                                                       
+
+                                               }
+
+                                            if(cont==-1)
+                                            {
+                                                break;
+                                            }                                       
+                                           
+
+                                           
+                                       }
+                                   }
+
 
                                }
 
                            }
-                              
-                              
                            
-                       }                    
+                         }
+
+                                      
                       
                        
                return arqAfet;
@@ -124,6 +150,25 @@ namespace SisRename.Classes
 
            return true;
        }
+        public string removeCaracter(char caracter,string value)
+       {
+           string[] part = value.Split(caracter);
+            value="";
+            for(int i=0;i<part.Length;i++)
+            {
+                value += part[i];
+
+            }
+
+           return value;
+       }
+        public string[] ordenar(string[] lista)
+        {
+
+
+            return lista;
+
+        }
 
 
 

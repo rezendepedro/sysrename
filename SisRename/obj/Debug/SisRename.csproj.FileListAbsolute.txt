@@ -26,3 +26,7 @@ C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\obj\Debug\SisRenam
 C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\obj\Debug\SisRename.Form1.resources
 C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\obj\Debug\SisRename.Properties.Resources.resources
 C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\obj\Debug\SisRename.csproj.GenerateResource.Cache
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\bin\Debug\SisRename.exe.manifest
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\bin\Debug\SisRename.application
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\obj\Debug\SisRename.exe.manifest
+C:\Users\pedro.rezende\Documents\ARYA_SIS\sysrename\SisRename\obj\Debug\SisRename.application

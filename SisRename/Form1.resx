@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="rtxtLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="rtxtLog.Text" xml:space="preserve">
-    <value>O sistema verifica a tabela que liga dois objetos, ex: coluna1 é codigo poste e coluna2 e codigo foto. o sistema verifica se existe o arquivo no diretorio e adiciona o nome do codigo do poste ao nome da foto, ex: 0001.jpg&gt;1111_0001.jpg</value>
+    <value>O sistema verifica a tabela que liga dois objetos, ex: coluna1 é o codigo do poste, coluna2 é codigo inical da foto e coluna3 é codigo final da foto. o sistema verifica se existe o arquivo no diretorio e adiciona o nome do codigo do poste ao nome da foto para todas as fotos da seguencia, ex: 0001.jpg&gt;POO1_1.jpg</value>
   </data>
+  <metadata name="bgWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

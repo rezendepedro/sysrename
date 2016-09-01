@@ -30,12 +30,17 @@ namespace SisRename
         string cmbcol1="";
         string cmbcol2="";
         string cmbcol3="";
+        string cmbcol4 = "";
+        string cmbcol5 = "";
+        string cmbcol6 = "";
+        string cmbcol7 = "";
         string caracter="";
         string sucesso = "";
         string pathentrada = "";
         string pathsaida = "";
         string numarq = "";
-        int arqAfet = 0;       
+        int arqAfet = 0;
+        string localidade = "";
         public Form1()
         {
             InitializeComponent();
@@ -50,13 +55,17 @@ namespace SisRename
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-            if (cmbBanco.SelectedIndex != -1 && cmbCol1.SelectedIndex != -1 && cmbCol2.SelectedIndex != -1 && cmbTabela.SelectedIndex != -1)
+            if (cmbBanco.SelectedIndex != -1 && cmbPoste.SelectedIndex != -1 && cmbInicio.SelectedIndex != -1 && cmbTabela.SelectedIndex != -1)
             {
                 cmbbanco = cmbBanco.Text;
                 cmbtabela=cmbTabela.Text;
-                cmbcol1 = cmbCol1.Text;
-                cmbcol2 = cmbCol2.Text;
-                cmbcol3 = cmbCol3.Text;
+                cmbcol1 = cmbPoste.Text;
+                cmbcol2 = cmbInicio.Text;
+                cmbcol3 = cmbFim.Text;
+                cmbcol4 = cmbSerie.Text; 
+                cmbcol5 = cmbLocalidade.Text;
+                cmbcol6 = cmbKML.Text;
+                cmbcol7 = cmbEquipe.Text;
                 caracter = txtCaracter.Text;
                 if (txtSelecionarEntrada.Text != "" && txtSelecionarSaida.Text != "")
                 {
@@ -109,11 +118,11 @@ namespace SisRename
                     Server srv2 = new Server(srvConn);
                     //rtxtLog.Text = srv2.Information.Version.ToString();   // connection is established              
 
+                    string conection = "Data Source=" + instanceName + ";User ID=" + sqlServerLogin + "; Password=" + password + ";MultipleActiveResultSets=False";
 
 
 
-
-                    conexao = new Classes.conexao(srvConn.ConnectionString);
+                    conexao = new Classes.conexao(conection);
 
                     lista = conexao.GetDatabaseList("SELECT * FROM sys.databases");
 
@@ -172,7 +181,7 @@ namespace SisRename
                 lista = conexao.GetDatabaseList("use " + cmbBanco.Text + "; SELECT NAME FROM SYSCOLUMNS WHERE ID = OBJECT_ID('"+cmbTabela.Text+"')");
                 if (lista[0] != "ERRO")
                 {
-                    cmbCol1.DataSource = lista;
+                    cmbPoste.DataSource = lista;
                 }
                 else
                 {
@@ -192,7 +201,7 @@ namespace SisRename
                 lista = conexao.GetDatabaseList("use " + cmbBanco.Text + "; SELECT NAME FROM SYSCOLUMNS WHERE ID = OBJECT_ID('" + cmbTabela.Text + "')");
                 if (lista[0] != "ERRO")
                 {
-                    cmbCol2.DataSource = lista;
+                    cmbInicio.DataSource = lista;
                 }
                 else
                 {
@@ -242,7 +251,7 @@ namespace SisRename
                 lista = conexao.GetDatabaseList("use " + cmbBanco.Text + "; SELECT NAME FROM SYSCOLUMNS WHERE ID = OBJECT_ID('" + cmbTabela.Text + "')");
                 if (lista[0] != "ERRO")
                 {
-                    cmbCol3.DataSource = lista;
+                    cmbFim.DataSource = lista;
                 }
                 else
                 {
@@ -265,7 +274,7 @@ namespace SisRename
                     {
                         caracter = "_";
                     }
-                    dt = conexao.SELECT("use " + cmbbanco + "; SELECT " + cmbcol1 + ", " + cmbcol2 + "," + cmbcol3 + " FROM " + cmbtabela + " order by " + cmbcol2);
+                    dt = conexao.SELECT("use " + cmbbanco + "; SELECT " + cmbcol1 + ", " + cmbcol2 + "," + cmbcol3 + "," + cmbcol4 + ","+cmbcol5 +"," + cmbcol6 + "," + cmbcol7 + " FROM " + cmbtabela + " order by " + cmbcol2);
                    
                     //operação para canlar o loop
                     try
@@ -302,39 +311,134 @@ namespace SisRename
                                     nomecompincio = "IMG_" + nomebdinicio + ".JPG";
                                     nomecompfinal = "IMG_" + nomebdfinal + ".JPG";
                                     numarq= arquivos.Length.ToString();
-                                    for (int j = 0; j < arquivos.Length; j++)
+                                   //string [] partdate  = dt.Rows[i][cmbcol5].ToString().Split('/');
+                                  // datalevantamento = partdate[2] + partdate[1] + partdate[0];
+                                    localidade = dt.Rows[i][cmbcol5].ToString();
+                                    
+                                    if (!Directory.Exists(@pathsaida + "\\fotos"))
                                     {
-                                        if (arquivos[j].ToString() == nomecompincio)
-                                        {
-                                            cont = 0;
-
-                                            for (int x = j; x < arquivos.Length; x++)
-                                            {
-                                                cont++;
-                                                antigoNome = @pathentrada + "\\" + arquivos[x].ToString();
-                                                novoNome = @pathsaida + "\\" + dt.Rows[i][cmbcol1].ToString() + caracter + cont + ".JPG";
-                                                File.Copy(antigoNome, novoNome); // Move o arquivo para a mesma pasta com os carateres substituídos
-                                                arqAfet++;
-                                                if (arquivos[x].ToString() == nomecompfinal)
-                                                {
-                                                    cont = -1;
-                                                    break;
-                                                }
-
-
-                                            }
-
-                                            if (cont == -1)
-                                            {
-                                                break;
-                                            }
-
-
-
-                                        }
+                                        Directory.CreateDirectory(@pathsaida + "\\fotos");
+                                    }
+                                    if (!Directory.Exists(@pathsaida + "\\fotos\\" + dt.Rows[i][cmbcol7].ToString()))
+                                    {
+                                        Directory.CreateDirectory(@pathsaida + "\\fotos\\" + dt.Rows[i][cmbcol7].ToString());
+                                    }
+                                    if (!Directory.Exists(@pathsaida + "\\fotos\\" + dt.Rows[i][cmbcol7].ToString() + "\\" + localidade))
+                                    {
+                                        Directory.CreateDirectory(@pathsaida + "\\fotos\\" + dt.Rows[i][cmbcol7].ToString() + "\\" + localidade);
                                     }
 
+                                    string partpath = pathentrada.Replace("fotos", "?").Split('?')[0];
 
+                                    if (!File.Exists(@partpath + "kml\\" + dt.Rows[i][cmbcol7].ToString() + "\\" + localidade + "\\" + dt.Rows[i][cmbcol6].ToString()))
+                                    {
+                                        DialogResult dialogResult = MessageBox.Show("Não existe um arquivo kml compativel com a equipe e a data deseja de levantamento continuar?", "Verificação de arquivo", MessageBoxButtons.YesNo);
+                                        if(dialogResult == DialogResult.Yes)
+                                        {
+                                            if (pathentrada.Contains(dt.Rows[i][cmbcol4].ToString()))
+                                            {
+                                                if (pathentrada.Contains(localidade))
+                                                {
+                                                    for (int j = 0; j < arquivos.Length; j++)
+                                                    {
+                                                        if (arquivos[j].ToString() == nomecompincio)
+                                                        {
+                                                            cont = 0;
+
+                                                            for (int x = j; x < arquivos.Length; x++)
+                                                            {
+                                                                cont++;
+                                                                antigoNome = @pathentrada + "\\" + arquivos[x].ToString();
+                                                                novoNome = @pathsaida + "\\fotos\\" + dt.Rows[i][cmbcol7].ToString() + "\\" + dt.Rows[i][cmbcol5].ToString() + "\\" + dt.Rows[i][cmbcol1].ToString() + caracter + cont + ".JPG";
+                                                                File.Copy(antigoNome, novoNome); // Move o arquivo para a mesma pasta com os carateres substituídos
+                                                                arqAfet++;
+                                                                if (arquivos[x].ToString() == nomecompfinal)
+                                                                {
+                                                                    cont = -1;
+                                                                    break;
+                                                                }
+
+
+                                                            }
+
+                                                            if (cont == -1)
+                                                            {
+                                                                break;
+                                                            }
+
+
+
+                                                        }
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                    MessageBox.Show("Diretório de entrada deve esta organizado.Ex: (raiz\\fotos\\equipe\\LOCALIDADE\\serie\\IMG_0001.jpg)");
+                                                }
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Diretório de entrada deve esta organizado.Ex: (raiz\\fotos\\equipe\\localidade\\SERIE\\IMG_0001.jpg)");
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("O arquivo KML deve estar na raiz do diretorio de entrada, deve esta organizado.Ex: (raiz\\kml\\equipe\\localidade\\arquivo.kml)");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (pathentrada.Contains(dt.Rows[i][cmbcol4].ToString()))
+                                        {
+                                            if (pathentrada.Contains(localidade))
+                                            {
+                                                for (int j = 0; j < arquivos.Length; j++)
+                                                {
+                                                    if (arquivos[j].ToString() == nomecompincio)
+                                                    {
+                                                        cont = 0;
+
+                                                        for (int x = j; x < arquivos.Length; x++)
+                                                        {
+                                                            cont++;
+                                                            antigoNome = @pathentrada + "\\" + arquivos[x].ToString();
+                                                            novoNome = @pathsaida + "\\fotos\\" + dt.Rows[i][cmbcol7].ToString() + "\\" + localidade + "\\" + dt.Rows[i][cmbcol1].ToString() + caracter + cont + ".JPG";
+                                                            File.Copy(antigoNome, novoNome); // Move o arquivo para a mesma pasta com os carateres substituídos
+                                                            arqAfet++;
+                                                            if (arquivos[x].ToString() == nomecompfinal)
+                                                            {
+                                                                cont = -1;
+                                                                break;
+                                                            }
+
+
+                                                        }
+
+                                                        if (cont == -1)
+                                                        {
+                                                            break;
+                                                        }
+
+
+
+                                                    }
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Diretório de entrada deve esta organizado.Ex: (raiz\\fotos\\equipe\\LOCALIDADE\\serie\\IMG_0001.jpg)");
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Diretório de entrada deve esta organizado.Ex: (raiz\\fotos\\equipe\\localidade\\SERIE\\IMG_0001.jpg)");
+                                        }
+
+
+                                  }                              
                                 
 
                             }
@@ -416,6 +520,85 @@ namespace SisRename
                 table.Columns.RemoveAt(counter);
             }
             return table;
+        }
+
+        private void cmbCol4_DropDown(object sender, EventArgs e)
+        {
+            List<string> lista;
+            if (cmbTabela.SelectedIndex != -1)
+            {
+                conexao = new Classes.conexao(srvConn.ConnectionString);
+                lista = conexao.GetDatabaseList("use " + cmbBanco.Text + "; SELECT NAME FROM SYSCOLUMNS WHERE ID = OBJECT_ID('" + cmbTabela.Text + "')");
+                if (lista[0] != "ERRO")
+                {
+                    cmbSerie.DataSource = lista;
+                }
+                else
+                {
+                    rtxtLog.Text += System.Environment.NewLine + " Erro ao selecionar tabela:" + lista[1];
+                }
+
+            }
+
+        }
+
+        private void cmbCol5_DropDown(object sender, EventArgs e)
+        {
+            List<string> lista;
+            if (cmbTabela.SelectedIndex != -1)
+            {
+                conexao = new Classes.conexao(srvConn.ConnectionString);
+                lista = conexao.GetDatabaseList("use " + cmbBanco.Text + "; SELECT NAME FROM SYSCOLUMNS WHERE ID = OBJECT_ID('" + cmbTabela.Text + "')");
+                if (lista[0] != "ERRO")
+                {
+                    cmbLocalidade.DataSource = lista;
+                }
+                else
+                {
+                    rtxtLog.Text += System.Environment.NewLine + " Erro ao selecionar tabela:" + lista[1];
+                }
+
+            }
+
+        }
+
+        private void cmbCol6_DropDown(object sender, EventArgs e)
+        {
+            List<string> lista;
+            if (cmbTabela.SelectedIndex != -1)
+            {
+                conexao = new Classes.conexao(srvConn.ConnectionString);
+                lista = conexao.GetDatabaseList("use " + cmbBanco.Text + "; SELECT NAME FROM SYSCOLUMNS WHERE ID = OBJECT_ID('" + cmbTabela.Text + "')");
+                if (lista[0] != "ERRO")
+                {
+                    cmbEquipe.DataSource = lista;
+                }
+                else
+                {
+                    rtxtLog.Text += System.Environment.NewLine + " Erro ao selecionar tabela:" + lista[1];
+                }
+
+            }
+
+        }
+
+        private void cmbCol7_DropDown(object sender, EventArgs e)
+        {
+            List<string> lista;
+            if (cmbTabela.SelectedIndex != -1)
+            {
+                conexao = new Classes.conexao(srvConn.ConnectionString);
+                lista = conexao.GetDatabaseList("use " + cmbBanco.Text + "; SELECT NAME FROM SYSCOLUMNS WHERE ID = OBJECT_ID('" + cmbTabela.Text + "')");
+                if (lista[0] != "ERRO")
+                {
+                    cmbKML.DataSource = lista;
+                }
+                else
+                {
+                    rtxtLog.Text += System.Environment.NewLine + " Erro ao selecionar tabela:" + lista[1];
+                }
+
+            }
         }
 
        

@@ -42,9 +42,9 @@
             this.lblTabela = new System.Windows.Forms.Label();
             this.cmbTabela = new System.Windows.Forms.ComboBox();
             this.lblCol1 = new System.Windows.Forms.Label();
-            this.cmbCol1 = new System.Windows.Forms.ComboBox();
+            this.cmbPoste = new System.Windows.Forms.ComboBox();
             this.lblCol2 = new System.Windows.Forms.Label();
-            this.cmbCol2 = new System.Windows.Forms.ComboBox();
+            this.cmbInicio = new System.Windows.Forms.ComboBox();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -54,15 +54,23 @@
             this.txtSelecionarEntrada = new System.Windows.Forms.TextBox();
             this.btnselecionarEntrada = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbCol3 = new System.Windows.Forms.ComboBox();
+            this.cmbFim = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCaracter = new System.Windows.Forms.TextBox();
             this.bgWorker = new System.ComponentModel.BackgroundWorker();
             this.pbar = new System.Windows.Forms.ProgressBar();
             this.lblpct = new System.Windows.Forms.Label();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.lblversion = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbLocalidade = new System.Windows.Forms.ComboBox();
+            this.cmbSerie = new System.Windows.Forms.ComboBox();
+            this.cmbKML = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbEquipe = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,10 +79,10 @@
             // btnSelecionarSaida
             // 
             this.btnSelecionarSaida.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelecionarSaida.Location = new System.Drawing.Point(650, 195);
+            this.btnSelecionarSaida.Location = new System.Drawing.Point(650, 305);
             this.btnSelecionarSaida.Name = "btnSelecionarSaida";
             this.btnSelecionarSaida.Size = new System.Drawing.Size(127, 29);
-            this.btnSelecionarSaida.TabIndex = 11;
+            this.btnSelecionarSaida.TabIndex = 14;
             this.btnSelecionarSaida.Text = "Saida...";
             this.btnSelecionarSaida.UseVisualStyleBackColor = true;
             this.btnSelecionarSaida.Click += new System.EventHandler(this.btnSelecionar_Click_1);
@@ -83,9 +91,9 @@
             // 
             this.txtSelecionarSaida.Enabled = false;
             this.txtSelecionarSaida.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSelecionarSaida.Location = new System.Drawing.Point(783, 197);
+            this.txtSelecionarSaida.Location = new System.Drawing.Point(783, 307);
             this.txtSelecionarSaida.Name = "txtSelecionarSaida";
-            this.txtSelecionarSaida.Size = new System.Drawing.Size(382, 26);
+            this.txtSelecionarSaida.Size = new System.Drawing.Size(385, 26);
             this.txtSelecionarSaida.TabIndex = 1;
             this.txtSelecionarSaida.TabStop = false;
             this.txtSelecionarSaida.Text = "Diretorio de saida de dados";
@@ -195,19 +203,19 @@
             this.lblCol1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCol1.Location = new System.Drawing.Point(40, 351);
             this.lblCol1.Name = "lblCol1";
-            this.lblCol1.Size = new System.Drawing.Size(126, 18);
+            this.lblCol1.Size = new System.Drawing.Size(109, 18);
             this.lblCol1.TabIndex = 13;
-            this.lblCol1.Text = "Coluna de poste:";
+            this.lblCol1.Text = "Codigo Poste:";
             // 
-            // cmbCol1
+            // cmbPoste
             // 
-            this.cmbCol1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCol1.FormattingEnabled = true;
-            this.cmbCol1.Location = new System.Drawing.Point(220, 348);
-            this.cmbCol1.Name = "cmbCol1";
-            this.cmbCol1.Size = new System.Drawing.Size(358, 26);
-            this.cmbCol1.TabIndex = 6;
-            this.cmbCol1.DropDown += new System.EventHandler(this.cmbCol1_DropDown);
+            this.cmbPoste.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPoste.FormattingEnabled = true;
+            this.cmbPoste.Location = new System.Drawing.Point(220, 348);
+            this.cmbPoste.Name = "cmbPoste";
+            this.cmbPoste.Size = new System.Drawing.Size(358, 26);
+            this.cmbPoste.TabIndex = 6;
+            this.cmbPoste.DropDown += new System.EventHandler(this.cmbCol1_DropDown);
             // 
             // lblCol2
             // 
@@ -215,19 +223,19 @@
             this.lblCol2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCol2.Location = new System.Drawing.Point(40, 391);
             this.lblCol2.Name = "lblCol2";
-            this.lblCol2.Size = new System.Drawing.Size(157, 18);
+            this.lblCol2.Size = new System.Drawing.Size(88, 18);
             this.lblCol2.TabIndex = 15;
-            this.lblCol2.Text = "Coluna de foto inicial:";
+            this.lblCol2.Text = "Foto inicial:";
             // 
-            // cmbCol2
+            // cmbInicio
             // 
-            this.cmbCol2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCol2.FormattingEnabled = true;
-            this.cmbCol2.Location = new System.Drawing.Point(220, 388);
-            this.cmbCol2.Name = "cmbCol2";
-            this.cmbCol2.Size = new System.Drawing.Size(358, 26);
-            this.cmbCol2.TabIndex = 7;
-            this.cmbCol2.DropDown += new System.EventHandler(this.cmbCol2_DropDown);
+            this.cmbInicio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbInicio.FormattingEnabled = true;
+            this.cmbInicio.Location = new System.Drawing.Point(220, 388);
+            this.cmbInicio.Name = "cmbInicio";
+            this.cmbInicio.Size = new System.Drawing.Size(358, 26);
+            this.cmbInicio.TabIndex = 7;
+            this.cmbInicio.DropDown += new System.EventHandler(this.cmbCol2_DropDown);
             // 
             // btnFechar
             // 
@@ -235,7 +243,7 @@
             this.btnFechar.Location = new System.Drawing.Point(43, 566);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(75, 34);
-            this.btnFechar.TabIndex = 14;
+            this.btnFechar.TabIndex = 17;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
@@ -243,10 +251,10 @@
             // btnConfirma
             // 
             this.btnConfirma.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirma.Location = new System.Drawing.Point(1079, 260);
+            this.btnConfirma.Location = new System.Drawing.Point(1084, 351);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(86, 33);
-            this.btnConfirma.TabIndex = 12;
+            this.btnConfirma.TabIndex = 15;
             this.btnConfirma.Text = "Confirmar";
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
@@ -263,9 +271,9 @@
             // rtxtLog
             // 
             this.rtxtLog.Enabled = false;
-            this.rtxtLog.Location = new System.Drawing.Point(650, 309);
+            this.rtxtLog.Location = new System.Drawing.Point(650, 413);
             this.rtxtLog.Name = "rtxtLog";
-            this.rtxtLog.Size = new System.Drawing.Size(515, 190);
+            this.rtxtLog.Size = new System.Drawing.Size(518, 86);
             this.rtxtLog.TabIndex = 19;
             this.rtxtLog.TabStop = false;
             this.rtxtLog.Text = resources.GetString("rtxtLog.Text");
@@ -274,7 +282,7 @@
             // 
             this.lblLog.AutoSize = true;
             this.lblLog.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLog.Location = new System.Drawing.Point(647, 288);
+            this.lblLog.Location = new System.Drawing.Point(647, 391);
             this.lblLog.Name = "lblLog";
             this.lblLog.Size = new System.Drawing.Size(39, 18);
             this.lblLog.TabIndex = 20;
@@ -283,10 +291,10 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(1081, 566);
+            this.btnCancelar.Location = new System.Drawing.Point(1084, 566);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(84, 33);
-            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -295,9 +303,9 @@
             // 
             this.txtSelecionarEntrada.Enabled = false;
             this.txtSelecionarEntrada.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSelecionarEntrada.Location = new System.Drawing.Point(783, 137);
+            this.txtSelecionarEntrada.Location = new System.Drawing.Point(783, 247);
             this.txtSelecionarEntrada.Name = "txtSelecionarEntrada";
-            this.txtSelecionarEntrada.Size = new System.Drawing.Size(382, 26);
+            this.txtSelecionarEntrada.Size = new System.Drawing.Size(385, 26);
             this.txtSelecionarEntrada.TabIndex = 21;
             this.txtSelecionarEntrada.TabStop = false;
             this.txtSelecionarEntrada.Text = "Diretorio de entrada de dados";
@@ -305,10 +313,10 @@
             // btnselecionarEntrada
             // 
             this.btnselecionarEntrada.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnselecionarEntrada.Location = new System.Drawing.Point(650, 135);
+            this.btnselecionarEntrada.Location = new System.Drawing.Point(650, 245);
             this.btnselecionarEntrada.Name = "btnselecionarEntrada";
             this.btnselecionarEntrada.Size = new System.Drawing.Size(127, 29);
-            this.btnselecionarEntrada.TabIndex = 10;
+            this.btnselecionarEntrada.TabIndex = 13;
             this.btnselecionarEntrada.Text = "Entrada...";
             this.btnselecionarEntrada.UseVisualStyleBackColor = true;
             this.btnselecionarEntrada.Click += new System.EventHandler(this.btnselecionarEntrada_Click);
@@ -319,38 +327,38 @@
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(40, 432);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 18);
+            this.label1.Size = new System.Drawing.Size(76, 18);
             this.label1.TabIndex = 24;
-            this.label1.Text = "Coluna de foto final:";
+            this.label1.Text = "Foto final:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // cmbCol3
+            // cmbFim
             // 
-            this.cmbCol3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCol3.FormattingEnabled = true;
-            this.cmbCol3.Location = new System.Drawing.Point(220, 429);
-            this.cmbCol3.Name = "cmbCol3";
-            this.cmbCol3.Size = new System.Drawing.Size(358, 26);
-            this.cmbCol3.TabIndex = 8;
-            this.cmbCol3.DropDown += new System.EventHandler(this.cmbCol3_DropDown);
+            this.cmbFim.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFim.FormattingEnabled = true;
+            this.cmbFim.Location = new System.Drawing.Point(220, 429);
+            this.cmbFim.Name = "cmbFim";
+            this.cmbFim.Size = new System.Drawing.Size(358, 26);
+            this.cmbFim.TabIndex = 8;
+            this.cmbFim.DropDown += new System.EventHandler(this.cmbCol3_DropDown);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 473);
+            this.label2.Location = new System.Drawing.Point(886, 200);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 18);
+            this.label2.Size = new System.Drawing.Size(160, 18);
             this.label2.TabIndex = 26;
-            this.label2.Text = "Caracter de separação:";
+            this.label2.Text = "Carac. de separação:";
             // 
             // txtCaracter
             // 
             this.txtCaracter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCaracter.Location = new System.Drawing.Point(220, 473);
+            this.txtCaracter.Location = new System.Drawing.Point(1052, 200);
             this.txtCaracter.Name = "txtCaracter";
-            this.txtCaracter.Size = new System.Drawing.Size(358, 26);
-            this.txtCaracter.TabIndex = 9;
+            this.txtCaracter.Size = new System.Drawing.Size(116, 26);
+            this.txtCaracter.TabIndex = 12;
             // 
             // bgWorker
             // 
@@ -364,7 +372,7 @@
             // 
             this.pbar.Location = new System.Drawing.Point(43, 528);
             this.pbar.Name = "pbar";
-            this.pbar.Size = new System.Drawing.Size(1122, 23);
+            this.pbar.Size = new System.Drawing.Size(1125, 23);
             this.pbar.TabIndex = 27;
             // 
             // lblpct
@@ -389,7 +397,7 @@
             this.pnlPrincipal.Controls.Add(this.btnSelecionarSaida);
             this.pnlPrincipal.Controls.Add(this.txtCaracter);
             this.pnlPrincipal.Controls.Add(this.label1);
-            this.pnlPrincipal.Controls.Add(this.cmbCol3);
+            this.pnlPrincipal.Controls.Add(this.cmbFim);
             this.pnlPrincipal.Controls.Add(this.txtSelecionarSaida);
             this.pnlPrincipal.Controls.Add(this.txtSelecionarEntrada);
             this.pnlPrincipal.Controls.Add(this.btnselecionarEntrada);
@@ -401,15 +409,35 @@
             this.pnlPrincipal.Controls.Add(this.cmbTabela);
             this.pnlPrincipal.Controls.Add(this.lblTabela);
             this.pnlPrincipal.Controls.Add(this.btnConfirma);
-            this.pnlPrincipal.Controls.Add(this.cmbCol1);
+            this.pnlPrincipal.Controls.Add(this.cmbLocalidade);
+            this.pnlPrincipal.Controls.Add(this.cmbSerie);
+            this.pnlPrincipal.Controls.Add(this.cmbKML);
+            this.pnlPrincipal.Controls.Add(this.label5);
+            this.pnlPrincipal.Controls.Add(this.cmbEquipe);
+            this.pnlPrincipal.Controls.Add(this.label6);
+            this.pnlPrincipal.Controls.Add(this.label4);
+            this.pnlPrincipal.Controls.Add(this.cmbPoste);
+            this.pnlPrincipal.Controls.Add(this.label3);
             this.pnlPrincipal.Controls.Add(this.btnFechar);
             this.pnlPrincipal.Controls.Add(this.lblCol1);
             this.pnlPrincipal.Controls.Add(this.lblCol2);
-            this.pnlPrincipal.Controls.Add(this.cmbCol2);
+            this.pnlPrincipal.Controls.Add(this.cmbInicio);
             this.pnlPrincipal.Location = new System.Drawing.Point(31, 29);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(1201, 616);
             this.pnlPrincipal.TabIndex = 29;
+            // 
+            // lblversion
+            // 
+            this.lblversion.AutoSize = true;
+            this.lblversion.BackColor = System.Drawing.SystemColors.Control;
+            this.lblversion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblversion.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblversion.Location = new System.Drawing.Point(562, 84);
+            this.lblversion.Name = "lblversion";
+            this.lblversion.Size = new System.Drawing.Size(88, 18);
+            this.lblversion.TabIndex = 30;
+            this.lblversion.Text = "Versão: 1.0";
             // 
             // panel1
             // 
@@ -425,23 +453,91 @@
             this.panel1.Size = new System.Drawing.Size(569, 140);
             this.panel1.TabIndex = 29;
             // 
-            // lblversion
+            // cmbLocalidade
             // 
-            this.lblversion.AutoSize = true;
-            this.lblversion.BackColor = System.Drawing.SystemColors.Control;
-            this.lblversion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblversion.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblversion.Location = new System.Drawing.Point(562, 84);
-            this.lblversion.Name = "lblversion";
-            this.lblversion.Size = new System.Drawing.Size(88, 18);
-            this.lblversion.TabIndex = 30;
-            this.lblversion.Text = "Versão: 1.0";
+            this.cmbLocalidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLocalidade.FormattingEnabled = true;
+            this.cmbLocalidade.Location = new System.Drawing.Point(827, 112);
+            this.cmbLocalidade.Name = "cmbLocalidade";
+            this.cmbLocalidade.Size = new System.Drawing.Size(341, 26);
+            this.cmbLocalidade.TabIndex = 10;
+            this.cmbLocalidade.DropDown += new System.EventHandler(this.cmbCol5_DropDown);
+            // 
+            // cmbSerie
+            // 
+            this.cmbSerie.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSerie.FormattingEnabled = true;
+            this.cmbSerie.Location = new System.Drawing.Point(220, 467);
+            this.cmbSerie.Name = "cmbSerie";
+            this.cmbSerie.Size = new System.Drawing.Size(358, 26);
+            this.cmbSerie.TabIndex = 9;
+            this.cmbSerie.DropDown += new System.EventHandler(this.cmbCol4_DropDown);
+            // 
+            // cmbKML
+            // 
+            this.cmbKML.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbKML.FormattingEnabled = true;
+            this.cmbKML.Location = new System.Drawing.Point(827, 154);
+            this.cmbKML.Name = "cmbKML";
+            this.cmbKML.Size = new System.Drawing.Size(341, 26);
+            this.cmbKML.TabIndex = 9;
+            this.cmbKML.DropDown += new System.EventHandler(this.cmbCol7_DropDown);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(647, 115);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 18);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Localidade:";
+            // 
+            // cmbEquipe
+            // 
+            this.cmbEquipe.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEquipe.FormattingEnabled = true;
+            this.cmbEquipe.Location = new System.Drawing.Point(715, 197);
+            this.cmbEquipe.Name = "cmbEquipe";
+            this.cmbEquipe.Size = new System.Drawing.Size(165, 26);
+            this.cmbEquipe.TabIndex = 11;
+            this.cmbEquipe.DropDown += new System.EventHandler(this.cmbCol6_DropDown);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(40, 470);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 18);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Codigo Serie:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(647, 157);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 18);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Arquivo KML:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(647, 200);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 18);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Equipe:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 657);
+            this.ClientSize = new System.Drawing.Size(1280, 676);
             this.Controls.Add(this.pnlPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
@@ -471,9 +567,9 @@
         private System.Windows.Forms.Label lblTabela;
         private System.Windows.Forms.ComboBox cmbTabela;
         private System.Windows.Forms.Label lblCol1;
-        private System.Windows.Forms.ComboBox cmbCol1;
+        private System.Windows.Forms.ComboBox cmbPoste;
         private System.Windows.Forms.Label lblCol2;
-        private System.Windows.Forms.ComboBox cmbCol2;
+        private System.Windows.Forms.ComboBox cmbInicio;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnConfirma;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -483,7 +579,7 @@
         private System.Windows.Forms.TextBox txtSelecionarEntrada;
         private System.Windows.Forms.Button btnselecionarEntrada;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbCol3;
+        private System.Windows.Forms.ComboBox cmbFim;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCaracter;
         private System.ComponentModel.BackgroundWorker bgWorker;
@@ -492,6 +588,14 @@
         private System.Windows.Forms.Panel pnlPrincipal;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblversion;
+        private System.Windows.Forms.ComboBox cmbLocalidade;
+        private System.Windows.Forms.ComboBox cmbKML;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbEquipe;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbSerie;
+        private System.Windows.Forms.Label label6;
     }
 }
 

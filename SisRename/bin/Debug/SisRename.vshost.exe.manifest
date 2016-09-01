@@ -162,14 +162,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SisRename.exe" size="139728">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SisRename.exe" size="145360">
       <assemblyIdentity name="SisRename" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4ZUN22yPTWFdqmtdTRzMsVazj/tRSqAsBiNzx73aDPY=</dsig:DigestValue>
+        <dsig:DigestValue>uc3VJ+565NhcoaFlipStgSoZOzL4QfXNn9XUgGr4pNY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
